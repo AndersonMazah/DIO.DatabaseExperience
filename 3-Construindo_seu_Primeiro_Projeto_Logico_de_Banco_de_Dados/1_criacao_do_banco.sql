@@ -14,21 +14,21 @@ CREATE TABLE Cliente (
 CREATE TABLE StatusPedido (
 	id INT NOT NULL IDENTITY(1, 1),
 	Identificacao VARCHAR(45) NOT NULL,
-	CONSTRAINT unique_StatusPedido_identificacao UNIQUE (Identificacao),
+	CONSTRAINT unique_StatusPedido_Identificacao UNIQUE (Identificacao),
 	CONSTRAINT pk_StatusPedido_id PRIMARY KEY (id)
 );
 
 CREATE TABLE TipoPagamento (
 	id INT NOT NULL IDENTITY(1, 1),
 	Identificacao VARCHAR(50) NOT NULL,
-	CONSTRAINT unique_TipoPagamento_identificacao UNIQUE (Identificacao),
+	CONSTRAINT unique_TipoPagamento_Identificacao UNIQUE (Identificacao),
 	CONSTRAINT pk_TipoPagamento_id PRIMARY KEY (id)
 );
 
 CREATE TABLE StatusEntrega (
 	id INT NOT NULL IDENTITY(1, 1),
 	Identificacao VARCHAR(45) NOT NULL,
-	CONSTRAINT unique_StatusEntrega_identificacao UNIQUE (Identificacao),
+	CONSTRAINT unique_StatusEntrega_Identificacao UNIQUE (Identificacao),
 	CONSTRAINT pk_StatusEntrega_id PRIMARY KEY (id)
 );
 
@@ -48,7 +48,7 @@ CREATE TABLE EnderecoEntrega (
 CREATE TABLE Estoque (
 	id INT NOT NULL IDENTITY(1, 1),
 	Identificacao VARCHAR(45) NOT NULL,
-	CONSTRAINT unique_Estoque_identificacao UNIQUE (Identificacao),
+	CONSTRAINT unique_Estoque_Identificacao UNIQUE (Identificacao),
 	CONSTRAINT pk_Estoque_id PRIMARY KEY (id)
 );
 
@@ -71,7 +71,7 @@ CREATE TABLE Fornecedor (
 CREATE TABLE Categoria (
 	id INT NOT NULL IDENTITY(1, 1),
 	Identificacao VARCHAR(45) NOT NULL,
-	CONSTRAINT unique_Categoria_identificacao UNIQUE (Identificacao),
+	CONSTRAINT unique_Categoria_Identificacao UNIQUE (Identificacao),
 	CONSTRAINT pk_Categoria_id PRIMARY KEY (id)
 );
 
@@ -81,7 +81,7 @@ CREATE TABLE Produto (
 	Identificacao VARCHAR(100) NOT NULL,
 	Descricao TEXT NOT NULL,
 	Valor DECIMAL(18,2) NOT NULL,
-	CONSTRAINT unique_Produto_identificacao UNIQUE (Identificacao),
+	CONSTRAINT unique_Produto_Identificacao UNIQUE (Identificacao),
 	CONSTRAINT pk_Produto_id PRIMARY KEY (id),
 	CONSTRAINT fk_Produto_idCategoria_Categoria_id FOREIGN KEY (idCategoria) REFERENCES Categoria(id) ON DELETE NO ACTION
 );
